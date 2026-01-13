@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>Расписание — ТВК 10</title>
+<link rel="stylesheet" href="style.css">
+<script src="data.js" defer></script>
+</head>
+
+<body>
+<h1>Расписание эфира</h1>
+<ul id="schedule"></ul>
+
+<script>
+const list = document.getElementById("schedule");
+TVK10.schedule.forEach(p => {
+  list.innerHTML += `<li><b>${p.time}</b> — ${p.program}</li>`;
+});
+</script>
+</body>
+</html>

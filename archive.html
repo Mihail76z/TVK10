@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>Архив — ТВК 10</title>
+<link rel="stylesheet" href="style.css">
+<script src="data.js" defer></script>
+</head>
+
+<body>
+<h1>Архив трансляций</h1>
+<div id="videos"></div>
+
+<script>
+const container = document.getElementById("videos");
+TVK10.archive.forEach(v => {
+  container.innerHTML += `
+    <h3>${v.title} (${v.date})</h3>
+    <iframe width="560" height="315" src="${v.videoUrl}" allowfullscreen></iframe>
+  `;
+});
+</script>
+</body>
+</html>
