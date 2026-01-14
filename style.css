@@ -1,25 +1,59 @@
 body {
   margin: 0;
-  background: #0b122f;
-  color: white;
   font-family: Arial, sans-serif;
+  background: #0b1020;
+  color: white;
 }
 
 header {
-  background: #111a3d;
+  background: #1e40ff;
   padding: 15px;
-}
-
-nav a {
-  color: white;
-  margin-right: 15px;
-  text-decoration: none;
-}
-
-h1, h2 {
-  margin: 10px 0;
 }
 
 main {
   padding: 20px;
+}
+
+iframe {
+  border: none;
+  max-width: 100%;
+}
+
+pre {
+  background: #111;
+  padding: 15px;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: black;
+  color: white;
+  padding: 10px;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+#ticker {
+  animation: scroll 15s linear infinite;
+}
+
+@keyframes scroll {
+  from { transform: translateX(100%); }
+  to   { transform: translateX(-100%); }
+}
+
+button {
+  padding: 10px 15px;
+  background: #1e40ff;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+textarea {
+  width: 100%;
+  background: #111;
+  color: white;
 }
