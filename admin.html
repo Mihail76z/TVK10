@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>ТВК 10 — Админка</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Админ-панель ТВК 10</h1>
+
+  <p>Редактирование расписания:</p>
+
+  <textarea id="scheduleInput" rows="10" cols="50"
+    placeholder="12:00 — Начало вещания"></textarea><br><br>
+
+  <button onclick="saveSchedule()">Сохранить</button>
+
+  <script>
+    const textarea = document.getElementById("scheduleInput");
+
+    // загрузка сохранённого расписания
+    textarea.value = localStorage.getItem("tvk_schedule") || "";
+
+    function saveSchedule() {
+      localStorage.setItem("tvk_schedule", textarea.value);
+      alert("Расписание сохранено!");
+    }
+  </script>
+</body>
+</html>
