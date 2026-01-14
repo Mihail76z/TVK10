@@ -3,66 +3,46 @@
 <head>
   <meta charset="UTF-8">
   <title>ТВК 10 — Прямой эфир</title>
-
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #0b0f1a;
-      color: white;
-    }
-
-    header {
-      background: #1a2cff;
-      padding: 15px 30px;
-      font-size: 28px;
-      font-weight: bold;
-    }
-
-    main {
-      padding: 30px;
-    }
-
-    .player {
-      background: black;
-      width: 100%;
-      max-width: 900px;
-      height: 500px;
-      margin-bottom: 30px;
-    }
-
-    .block {
-      background: #141a2e;
-      padding: 20px;
-      max-width: 900px;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <header>ТВК 10</header>
+<header>
+  <h1>ТВК 10</h1>
+</header>
 
-  <main>
+<main>
+  <section>
     <h2>Прямой эфир</h2>
 
-    <div class="player">
-  <iframe
-  src="https://player.twitch.tv/?channel=omnustv_76reg&parent=mihail76z.github.io&parent=localhost"
-  width="100%"
-  height="500"
-  frameborder="0"
-  allowfullscreen>
-</iframe>
+    <!-- Twitch плеер -->
+    <iframe
+      src="https://player.twitch.tv/?channel=omnustv_76reg&parent=mihail76z.github.io"
+      height="360"
+      width="640"
+      allowfullscreen>
+    </iframe>
+  </section>
 
+  <section>
+    <h2>Расписание эфира</h2>
+    <pre id="schedule">Загрузка...</pre>
+  </section>
+</main>
 
+<footer>
+  <div id="ticker"></div>
+</footer>
 
+<script>
+  // расписание
+  document.getElementById("schedule").textContent =
+    localStorage.getItem("tvk_schedule") || "Расписание скоро появится";
 
-    <div class="block">
-      <h3>Расписание эфира</h3>
-      <p>12:00 — Начало вещания</p>
-      <p>13:00 — Программа</p>
-    </div>
-  </main>
+  // бегущая строка
+  document.getElementById("ticker").textContent =
+    localStorage.getItem("tvk_ticker") || "Скоро — ТВК 10";
+</script>
 
 </body>
 </html>
