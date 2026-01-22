@@ -1,51 +1,24 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <title>ТВК 10 — Прямой эфир</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<title>ТВК 10 — Прямой эфир</title>
+<style>
+body { background:#0b1020; color:white; font-family:Arial; margin:0 }
+header { background:#1e32ff; padding:15px; font-size:24px }
+.content { padding:20px }
+.offline { font-size:26px; color:#ff5555; text-align:center; margin-top:100px }
+</style>
 </head>
 <body>
 
-<header>
-  <h1>ТВК 10</h1>
-</header>
+<header>ТВК 10</header>
+<div class="content" id="content">Загрузка...</div>
 
-<main>
-  <section>
-    <h2>Прямой эфир</h2>
-
-    <!-- Twitch плеер -->
-    <iframe
-      src="https://player.twitch.tv/?channel=omnustv_76reg&parent=mihail76z.github.io"
-      height="360"
-      width="640"
-      allowfullscreen>
-    </iframe>
-  </section>
-
-  <section>
-    <h2>Расписание эфира</h2>
-    <pre id="schedule">Загрузка...</pre>
-  </section>
-</main>
-
-<footer>
-  <div id="ticker"></div>
-</footer>
-
-<script>
-  // расписание
-  document.getElementById("schedule").textContent =
-    localStorage.getItem("tvk_schedule") || "Расписание скоро появится";
-
-  // бегущая строка
-  document.getElementById("ticker").textContent =
-    localStorage.getItem("tvk_ticker") || "Скоро — ТВК 10";
-</script>
-
+<script src="script.js"></script>
 </body>
 </html>
+
 
 
 
