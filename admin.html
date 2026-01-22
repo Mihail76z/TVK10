@@ -1,46 +1,30 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <title>Админка ТВК 10</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<title>Админ ТВК 10</title>
+<style>
+body { background:#0b1020; color:white; font-family:Arial; text-align:center }
+input, button { padding:10px; font-size:16px; margin:5px }
+.panel { display:none }
+</style>
 </head>
 <body>
 
-<h1>Админ-панель ТВК 10</h1>
+<h2>Админ-панель ТВК 10</h2>
 
-<h2>Расписание</h2>
-<textarea id="schedule" rows="8"
-placeholder="12:00 — Начало вещания"></textarea>
-<br>
-<button onclick="saveSchedule()">Сохранить расписание</button>
+<div id="login">
+  <input type="password" id="pass" placeholder="Пароль">
+  <br>
+  <button onclick="login()">Войти</button>
+</div>
 
-<h2>Бегущая строка</h2>
-<textarea id="ticker" rows="3"
-placeholder="Совсем скоро — ТВК 10"></textarea>
-<br>
-<button onclick="saveTicker()">Сохранить строку</button>
+<div class="panel" id="panel">
+  <button onclick="setAir(true)">🟢 Начать эфир</button>
+  <button onclick="setAir(false)">🔴 Конец эфира</button>
+</div>
 
-<script>
-  // загрузка данных
-  document.getElementById("schedule").value =
-    localStorage.getItem("tvk_schedule") || "";
-
-  document.getElementById("ticker").value =
-    localStorage.getItem("tvk_ticker") || "";
-
-  function saveSchedule() {
-    localStorage.setItem("tvk_schedule",
-      document.getElementById("schedule").value);
-    alert("Расписание сохранено");
-  }
-
-  function saveTicker() {
-    localStorage.setItem("tvk_ticker",
-      document.getElementById("ticker").value);
-    alert("Бегущая строка сохранена");
-  }
-</script>
-
+<script src="admin.js"></script>
 </body>
 </html>
+
